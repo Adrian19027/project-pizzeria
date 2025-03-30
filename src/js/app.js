@@ -66,7 +66,7 @@ const app = {
           new Product(thisApp.data.products[productData].id, thisApp.data.products[productData]);
         }
 
-    },
+      },
     
       initCart: function(){
         const thisApp = this;
@@ -79,29 +79,37 @@ const app = {
         thisApp.productList.addEventListener('add-to-cart', function (event) {
           app.cart.add(event.detail.product);
         });
-    },
+      },
 
-      initData: function() {
+      initData: function () {
+    const thisApp = this;
+
+    thisApp.data = {};
+    const url = settings.db.url + '/' + settings.db.products;
+
+    fetch(url)
+      .then(function (rawResponse) {
+        return rawResponse.json();
+      })
+      .then(function (parsedResponse) {
+        console.log('parsedResponse', parsedResponse);
+
+        /* save parsedResponse as thisApp.data.products */
+        thisApp.data.products = parsedResponse;
+        /* execute initMenu method */
+        thisApp.initMenu();
+      });
+        
+    console.log('thisApp.data', JSON.stringify(thisApp.data));
+      },
+      
+      initBooking: function () {
         const thisApp = this;
 
-        thisApp.data = {};
-        const url = settings.db.url + '/' + settings.db.products;
+        const bookingWidget = document.querySelector(select.containerOf.booking);
 
-        fetch(url)
-          .then(function (rawResponse) {
-            return rawResponse.json();
-          })
-          .then(function (parsedResponse) {
-            console.log('parsedResponse', parsedResponse);
-
-            /* save parsedResponse as thisApp.data.products */
-            thisApp.data.products = parsedResponse;
-            /* execute initMenu method */
-            thisApp.initMenu();
-          });
-        
-        console.log('thisApp.data', JSON.stringify(thisApp.data));
-    },
+        thisApp.booking = new Booking(bookingWidget);
+      },
     
       init: function () {
         const thisApp = this;
@@ -114,7 +122,8 @@ const app = {
         thisApp.initPages();
         thisApp.initData();
         thisApp.initCart();
-    },
+        thisApp.initBooking();
+      },
   };
 
   app.init();
