@@ -1,6 +1,5 @@
 import AmountWidget from "./AmountWidget.js";
 import { select, templates } from '../settings.js'; 
-import utils from "../utils.js";
 
 class Booking {
     constructor(element) {
@@ -15,7 +14,7 @@ class Booking {
         const thisBooking = this;
 
         const generatedHTML = templates.bookingWidget(); // NIE BYŁO ZAZNACZONE ŻE templates.bookingWidget TO funkcja...
-        console.log('templates.bookingWidget:', templates.bookingWidget);
+        console.log('templates.bookingWidget:', templates.bookingWidget());
         console.log('generatedHTML',generatedHTML);
         thisBooking.dom = {};
 
@@ -23,7 +22,7 @@ class Booking {
         thisBooking.dom.wrapper.innerHTML = generatedHTML;
         thisBooking.dom.peopleAmount = document.querySelector(select.booking.peopleAmount);
         thisBooking.dom.hoursAmount = document.querySelector(select.booking.hoursAmount);
-    };
+    }
 
     initWidgets() {
         const thisBooking = this;
@@ -34,7 +33,7 @@ class Booking {
         });
         thisBooking.dom.hoursAmount.addEventListener('updated', function(){
         });
-    };
+    }
 } 
 
 export default Booking

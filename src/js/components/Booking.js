@@ -14,7 +14,7 @@ class Booking {
         const thisBooking = this;
 
         const generatedHTML = templates.bookingWidget(); // NIE BYŁO ZAZNACZONE ŻE templates.bookingWidget TO funkcja...
-        console.log('templates.bookingWidget:', templates.bookingWidget);
+        console.log('templates.bookingWidget:', templates.bookingWidget());
         console.log('generatedHTML',generatedHTML);
         thisBooking.dom = {};
 
