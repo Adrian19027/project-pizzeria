@@ -1,4 +1,4 @@
-import * as func from './functions';
+import * as func from './functions.js';
 
 const EVENT_LISTENER_LIST = 'eventListenerList';
 
