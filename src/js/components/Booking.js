@@ -190,6 +190,7 @@ class Booking {
 
         thisBooking.dom.wrapper.addEventListener('updated', function () {
             thisBooking.updateDOM();
+            // "zerowanie" wyboru stolika przy zmianie godziny czy daty:
         });
     }
 } 
