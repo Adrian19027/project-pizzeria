@@ -1,7 +1,7 @@
 import { select, settings } from '../settings.js';
 import BaseWidget from './BaseWidget.js';
 
-class AmountWidget extends BaseWidget {
+class AmountWidget extends BaseWidget{
   constructor(element) {
     super(element, settings.amountWidget.defaultValue);
 
@@ -9,7 +9,8 @@ class AmountWidget extends BaseWidget {
 
       thisWidget.getElements(element);
     
-      thisWidget.initActions();
+    thisWidget.initActions();
+    thisWidget.renderValue();
     }
 
     getElements() {

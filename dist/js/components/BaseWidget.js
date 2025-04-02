@@ -5,29 +5,40 @@ class BaseWidget {
         thisWidget.dom = {};
         thisWidget.dom.wrapper = wrapperElement;
 
-        thisWidget.value = initialValue;
-    }
+        thisWidget.correctValue = initialValue;
+  }
+  
+  get value(){
+    const thisWidget = this;
 
-    setValue(value) {
+    return thisWidget.correctValue;
+  }
+
+  set value(value) {
           const thisWidget = this;
     
           const newValue = thisWidget.parseValue(value);
     
-          /* TODO: Add validation */
-          if (newValue != thisWidget.value && thisWidget.isValid(newValue)){
-              thisWidget.value = newValue;
+          /* TO DO: Add validation */
+          if (newValue != thisWidget.correctValue && thisWidget.isValid(newValue)){
+              thisWidget.correctValue = newValue;
               thisWidget.announce();
           }
           
           thisWidget.renderValue();
-    
-    }
+  }
+  
+  setValue(value) {
+    const thisWidget = this;
+
+    thisWidget.value = value;
+  }
     
     parseValue(value) {
         return parseInt(value);
       }
     
-      isValid(value) {
+    isValid(value) {
           return !isNaN(value);
     }
     
@@ -47,4 +58,4 @@ class BaseWidget {
     }
 }
 
-export default BaseWidget
+export default BaseWidget;
