@@ -173,6 +173,10 @@
         }
   
       }
+
+      &.selected {
+          background-color: lighten(#19a56f, 40%);
+      }
     }
   
     [data-table="1"] {
