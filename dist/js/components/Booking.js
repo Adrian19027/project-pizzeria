@@ -102,7 +102,7 @@ class Booking {
     makeBooked(date, hour, duration, table) {
         const thisBooking = this;
 
-        if (typeof thisBooking.booked[date] == 'undefined') {
+        if (typeof thisBooking.booked[date] == 'undefined' ) {
             thisBooking.booked[date] = {};
         }
 

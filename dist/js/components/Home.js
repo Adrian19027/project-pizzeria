@@ -1,26 +1,30 @@
-
+import { select, templates, settings, classNames } from '../settings.js';
+import utils from '../utils.js';
 class Home {
     constructor() {
+        const thisHome = this;
         
+        thisHome.render();
     }
 
     render() {
-       const thisHome = this;
+        const thisHome = this;
+
+        const generatedHTML = templates.homePage();
+
+        thisHome.element = utils.createDOMFromHTML(generatedHTML);
+              
+              const homeContainer = document.querySelector(select.containerOf.homePage);
+              
+              homeContainer.appendChild(thisHome.element);
     }
 
     initWidget() {
-        const thisHome = this;
+        
+    }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Inicjalizacja karuzeli Flickity
-            const testimonialCarousel = document.querySelector('.home__testimonial-carousel .carousel-track');
-            const flickity = new Flickity(testimonialCarousel, {
-                autoPlay: 3000,   // Automatyczne przewijanie co 3 sekundy
-                wrapAround: true, // Nieskończone przewijanie
-                pageDots: false,  // Ukrywanie kropek nawigacji
-                prevNextButtons: false, // Ukrywanie przycisków poprzedni/następny
-            });
-        })
+    initActions() {
+        
     }
 }
 
