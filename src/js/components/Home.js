@@ -1,4 +1,4 @@
-import { select, templates, settings, classNames } from '../settings.js';
+import { select, templates } from '../settings.js';
 import utils from '../utils.js';
 class Home {
     constructor() {
