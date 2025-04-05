@@ -1,1 +1,101 @@
-.home__buttons{display:flex;justify-content:center;margin-bottom:10px;gap:5px}.home__button{position:relative;flex:1;text-align:center;width:50%;height:140px;margin:5px 0;overflow:hidden}.home__button img{object-fit:cover;width:100%;height:100%}.home__button span{position:absolute;z-index:10;color:#fff;font-size:20px;font-weight:bold;top:50%;left:50%;z-index:10;transform:translate(-50%, -50%)}.home__opening-hours{width:660px;height:140px;text-align:center;color:#fff;background-color:#ff6b6b}.main-carousel{width:100%;height:400px}.carousel-cell{display:flex;align-items:center;width:100%;height:100%;margin-right:10px;text-align:center}.carousel-cell>div{display:flex;justify-content:center;align-items:center;width:100%}.slide-image{margin-right:20px;width:250px;height:250px}.slide-text{flex:1;color:#000;font-size:18px}.slide-text p{font-size:16px;margin-bottom:10px}.slide-text cite{font-style:italic;color:#000}.slide-image img{width:250px;height:250px;object-fit:cover}.flickity-button{display:none}
+.home__buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  gap: 5px;
+}
+
+.home__button {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  width: 50%;
+  height: 140px;
+  margin: 5px 0;
+  overflow: hidden;
+}
+
+.home__button img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.home__button span {
+  position: absolute;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+}
+
+.home__button:hover span {
+  transform: translate(-50%, -90%);
+}
+
+.home__opening-hours {
+  width: 660px;
+  height: 140px;
+  text-align: center;
+  color: white;
+  background-color: #ff6b6b;
+}
+
+.main-carousel {
+  width: 100%;
+  height: 400px;
+}
+
+.carousel-cell {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.carousel-cell > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.slide-image {
+  margin-right: 20px;
+  width: 250px;
+  height: 250px;
+}
+
+.slide-text {
+  flex: 1;
+  color: #000;
+  font-size: 18px;
+}
+
+.slide-text p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.slide-text cite {
+  font-style: italic;
+  color: #000;
+}
+
+.slide-image img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.flickity-button {
+  display: none;
+}
+
+/*# sourceMappingURL=homepage.css.map */
