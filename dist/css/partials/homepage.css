@@ -43,6 +43,10 @@
   text-align: center;
   color: white;
   background-color: #ff6b6b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-carousel {
