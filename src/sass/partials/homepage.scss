@@ -1,3 +1,7 @@
+.home-page.container {
+    padding: 0;
+}
+
 .home__buttons {
     display: flex;
     justify-content: center;
@@ -38,7 +42,7 @@
 }
 
 .home__opening-hours {
-    width: 660px;
+    width: 100%;
     height: 140px;
     text-align: center;
     color: white;
@@ -47,6 +51,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.home__testimonial-carousel{
+    margin: 30px 0 40px 0;
 }
 
 .main-carousel {
@@ -92,11 +100,74 @@
 }
 
 .slide-image img {
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
 }
 
 .flickity-button {
     display: none;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%; 
+    margin: 40px 0;
+    justify-content: center;
+    gap: 10px;
+}
+
+.item {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 220px;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.item:hover .item-overlay {
+    opacity: 1;
+}
+
+.item:hover img {
+    opacity: 0.7;
+}
+
+.item-overlay:hover i {
+    font-size: 36px;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+    margin: 0 10px;
+}
+
+.item-overlay:hover i:hover {
+    transform: scale(1.2);
+    color: #ff6b6b;
 }
