@@ -5,6 +5,7 @@ class Home {
         const thisHome = this;
         
         thisHome.render();
+        thisHome.initActions();
     }
 
     render() {
@@ -24,7 +25,25 @@ class Home {
     }
 
     initActions() {
-        
+        const thisHome = this;
+
+        const orderLink = document.querySelector('a[href="#order"]');
+
+        orderLink.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const orderNavLink = document.querySelector('.main-nav a[href="#order"]');
+
+            const navLinks = document.querySelectorAll('.main-nav a');
+
+            for (let link of navLinks) {
+                if(link.classList.contains('active')) {
+                    link.classList.remove('active');
+                }
+            }
+
+            orderNavLink.classList.add('active');
+        })
     }
 }
 

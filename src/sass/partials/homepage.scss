@@ -19,6 +19,23 @@
     overflow: hidden;
 }
 
+.hover-text {
+    position: absolute;
+    transform: translateX(-50%);
+    bottom: -30px;
+    left: 50%;
+    opacity: 0;
+    color: white;
+    font-size: 14px;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+    white-space: nowrap
+}
+
+.home__button:hover .hover-text {
+    opacity: 1;
+    bottom: 10px;
+}
+
 .home__button img {
     object-fit: cover;
     width: 100%;
@@ -127,7 +144,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* overflow: hidden; */
+    transition: all 0.3s ease;
 }
 
 .item img {
@@ -137,37 +154,38 @@
     transition: opacity 0.3s ease;
 }
 
+.item:hover img {
+    opacity: 0.6;
+}
+
 .item-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 220px;
     height: 220px;
-    transition: opacity 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s ease;
+    z-index: 1;
 }
 
 .item:hover .item-overlay {
     opacity: 1;
 }
 
-.item:hover img {
-    opacity: 0.7;
-}
-
-.item-overlay:hover i {
+.item-overlay i {
     font-size: 36px;
     color: white;
-    transition: transform 0.3s ease, color 0.3s ease;
     margin: 0 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    z-index: 2;
 }
 
-.item-overlay:hover i:hover {
-    transform: scale(1.2);
+.item-overlay i:hover {
     color: #ff6b6b;
+    transform: scale(1.2);
 }
