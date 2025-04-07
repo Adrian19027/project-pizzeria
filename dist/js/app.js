@@ -4,6 +4,7 @@ import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
 import Home from './components/Home.js';
 const app = {
+
       initPages: function () {
         const thisApp = this;
     
@@ -39,6 +40,8 @@ const app = {
             window.location.hash = '#/' + id;
           });
         }
+    
+        
       },
   
       activatePage: function(pageId) {
@@ -55,6 +58,31 @@ const app = {
             link.getAttribute('href') == '#' + pageId
           );
         }
+
+        
+      },
+      
+    initHomeButtonClicks: function () {
+      const thisApp = this;
+
+      const goToOrderButton = document.querySelector(select.home.goToOrder);
+      const goToBookingButton = document.querySelector(select.home.goToBooking);
+      // console.log('ORDER', goToOrderButton);
+      if (goToOrderButton) {
+        goToOrderButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        thisApp.activatePage('order');
+        window.location.hash = '#/order';
+        })
+      };
+
+      if (goToBookingButton) {
+        goToBookingButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        thisApp.activatePage('booking');
+        window.location.hash = '#/booking';
+      });
+      }
       },
   
       initMenu: function () {
@@ -132,6 +160,7 @@ const app = {
         thisApp.initCart();
         thisApp.initBooking();
         thisApp.initHome();
+        thisApp.initHomeButtonClicks();
       },
   };
 

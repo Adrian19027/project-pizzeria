@@ -71,7 +71,11 @@ export const select = {
       edit: '[href="#edit"]',
       remove: '[href="#remove"]',
     },
-    // CODE ADDED END
+  // CODE ADDED END
+    home: {
+      goToOrder: '#goToOrder',
+      goToBooking: '#goToBooking',
+    },
   };
 
 export const classNames = {
