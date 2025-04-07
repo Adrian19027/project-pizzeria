@@ -74,7 +74,7 @@ const app = {
         thisApp.activatePage('order');
         window.location.hash = '#/order';
         })
-      };
+      }
 
       if (goToBookingButton) {
         goToBookingButton.addEventListener('click', function (event) {
