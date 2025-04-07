@@ -28,7 +28,7 @@
     color: white;
     font-size: 14px;
     transition: opacity 0.3s ease, bottom 0.3s ease;
-    white-space: nowrap
+    white-space: nowrap;
 }
 
 .home__button:hover .hover-text {
@@ -130,8 +130,8 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 100%; 
-    margin: 40px 0;
+    max-width: 100%;
+    margin: 100px 0 30px 0;
     justify-content: center;
     gap: 10px;
 }
@@ -188,4 +188,9 @@
 .item-overlay i:hover {
     color: #ff6b6b;
     transform: scale(1.2);
+}
+
+.link {
+    margin-bottom: 60px;
+    padding: 0 5px;
 }

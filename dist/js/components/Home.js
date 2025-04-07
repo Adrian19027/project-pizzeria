@@ -15,9 +15,9 @@ class Home {
 
         thisHome.element = utils.createDOMFromHTML(generatedHTML);
               
-              const homeContainer = document.querySelector(select.containerOf.homePage);
+        const homeContainer = document.querySelector(select.containerOf.homePage);
               
-              homeContainer.appendChild(thisHome.element);
+        homeContainer.appendChild(thisHome.element);
     }
 
     initWidget() {
@@ -25,25 +25,7 @@ class Home {
     }
 
     initActions() {
-        const thisHome = this;
-
-        const orderLink = document.querySelector('a[href="#order"]');
-
-        orderLink.addEventListener('click', function (event) {
-            event.preventDefault();
-
-            const orderNavLink = document.querySelector('.main-nav a[href="#order"]');
-
-            const navLinks = document.querySelectorAll('.main-nav a');
-
-            for (let link of navLinks) {
-                if(link.classList.contains('active')) {
-                    link.classList.remove('active');
-                }
-            }
-
-            orderNavLink.classList.add('active');
-        })
+      
     }
 }
 
